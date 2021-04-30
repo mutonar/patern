@@ -10,26 +10,21 @@ package Observer;
  *
  * @author nazarov
  */
-public class Dysplay1 implements DysplayElement, Observer{
+public class Dysplay2 implements DysplayElement, Observer{
 
     int min;
     int max;
     int value;
     Subject stationWeather;
     
-    public Dysplay1(){ 
-    
-    }
-    
-    // в конструктор передаем Субъект за которым смотрим
-    public Dysplay1(Subject stationWeather){ 
+    public Dysplay2(Subject stationWeather){ // в конструктор передаем Субъект за которым смотрим
         this.stationWeather = stationWeather;
         stationWeather.addObserver(this); // Регестрируемся в наблюдаемом
     }
     @Override
     public void showDataDisplay() {
-                // метод вывод просто информации
-        System.out.println(min + " " + max + " " + value);
+    // метод вывод просто информации(немного по другому)
+        System.out.println("min: " + min + " max: " + max + " Value: "+ value);
     }
 
     @Override
@@ -39,6 +34,6 @@ public class Dysplay1 implements DysplayElement, Observer{
         this.value = value;
         showDataDisplay();
     }
-
+        
     
 }
