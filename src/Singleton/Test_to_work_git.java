@@ -6,9 +6,6 @@
 
 package Singleton;
 
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.plot.XYPlot;
-import org.jfree.data.time.TimeSeriesCollection;
 
 /**
  *
