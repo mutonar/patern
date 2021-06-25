@@ -40,11 +40,14 @@ public class Main {
         
         // Тест Вентилятора
         runCelling();
+        
+        // Тест макрокоманд
+        useMacrocommands();
     }
     
     public static void runCelling(){
     
-    RemoteControlWithUndo remoteControl = new RemoteControlWithUndo();
+        RemoteControlWithUndo remoteControl = new RemoteControlWithUndo();
  
         CeilingFan ceilingFan = new CeilingFan("Living Room");
    
@@ -67,6 +70,20 @@ public class Main {
         remoteControl.onButtonWasPushed(1); //На этот раз выбираем высокую
         System.out.println(remoteControl);
         remoteControl.undoButtonWasPushed(); // И снова отмена; должна вернуться средняя скорость
+    }
+    
+    // --- Использование макрокоманд ---
+    public static void useMacrocommands(){
+        Light light = new Light("Living Room");
+        TV tv = new TV("Living Room");
+        Stereo stereo = new Stereo("Living Room");
+        Hottub hottub = new Hottub();
 
+        LightOnCommand lightOn = new LightOnCommand(light);
+        StereoOnCommand stereoOn = new StereoOnCommand(stereo);
+        TVOnCommand tvOn = new TVOnCommand(tv);
+        HottubOnCommand hottubOn = new HottubOnCommand(hottub);
+
+    
     }
 }
