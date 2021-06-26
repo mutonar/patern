@@ -3,7 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Nazarov/Documents/NetBeansProjects/Patern/src/FactoryAbstract/Main.java</file>
+            <file>file:/C:/Users/ad/Documents/NetBeansProjects/patern/src/Command/CeilingFanOffCommand.java</file>
+            <file>file:/C:/Users/ad/Documents/NetBeansProjects/patern/src/Command/RemoteControlWithUndo.java</file>
+            <file>file:/C:/Users/ad/Documents/NetBeansProjects/patern/src/Command/LightOffCommand.java</file>
+            <file>file:/C:/Users/ad/Documents/NetBeansProjects/patern/src/Command/Main.java</file>
+            <file>file:/C:/Users/ad/Documents/NetBeansProjects/patern/src/Command/StereoOnWithCDCommand.java</file>
+            <file>file:/C:/Users/ad/Documents/NetBeansProjects/patern/src/Command/CeilingFanMediumCommand.java</file>
+            <file>file:/C:/Users/ad/Documents/NetBeansProjects/patern/src/Command/CeilingFanHighCommand.java</file>
+            <file>file:/C:/Users/ad/Documents/NetBeansProjects/patern/src/Command/MacroCommand.java</file>
         </group>
     </open-files>
 </project-private>

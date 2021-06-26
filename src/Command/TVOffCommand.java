@@ -8,22 +8,21 @@ package Command;
 /**
  *
  * @author ad
- * Реализация комманды светаы
  */
-public class LightOffCommand implements Command {
-    Light light;
+class TVOffCommand implements Command {
+    TV tv;
  
-    public LightOffCommand(Light light) {
-        this.light = light;
+    public TVOffCommand(TV tv) {
+        this.tv = tv;
     }
  
     @Override
     public void execute() {
-        light.off();
+        tv.off();
     }
 
     @Override
     public void undo() {
-        light.on();
+        tv.on();
     }
 }

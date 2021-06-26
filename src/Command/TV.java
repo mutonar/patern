@@ -8,22 +8,19 @@ package Command;
 /**
  *
  * @author ad
- * 
- * Оборудование свет.
- * 
  */
-class Light extends Equipment{
+class TV extends Equipment{
     
-    Light(String nameEquipment) {
+    TV(String nameEquipment) {
         discription = nameEquipment;
     }
 
     void on() {
-        System.out.println("Light ON " + discription);
+        System.out.println("TV ON " + discription);
     }
 
     void off() {
-         System.out.println("Light OFF " + discription);
+         System.out.println("TV OFF " + discription);
     }
     
 }

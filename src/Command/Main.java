@@ -74,16 +74,37 @@ public class Main {
     
     // --- Использование макрокоманд ---
     public static void useMacrocommands(){
+        RemoteControlWithUndo remoteControl = new RemoteControlWithUndo();
+        // Сначала создается набор команд, которые войдут в макропоследовательность:
+        // Устройства
         Light light = new Light("Living Room");
         TV tv = new TV("Living Room");
         Stereo stereo = new Stereo("Living Room");
-        Hottub hottub = new Hottub();
-
+        Hottub hottub = new Hottub(); // Джакузи
+        // комманды этими устройствами
         LightOnCommand lightOn = new LightOnCommand(light);
+        LightOffCommand lightOff = new LightOffCommand(light);
         StereoOnCommand stereoOn = new StereoOnCommand(stereo);
+        StereoOffCommand stereoOff = new StereoOffCommand(stereo);
         TVOnCommand tvOn = new TVOnCommand(tv);
+        TVOffCommand tvOff = new TVOffCommand(tv);
         HottubOnCommand hottubOn = new HottubOnCommand(hottub);
+        HottubOffCommand hottubOff = new HottubOffCommand(hottub);
+        // (включение и выключение), заполняются соответствующими командами:
+        Command[] partyOn = { lightOn, stereoOn, tvOn, hottubOn};
+        Command[] partyOff = { lightOff, stereoOff, tvOff, hottubOff};
+        // и два объекта макрокоманд, в которых они хранятся.
+        MacroCommand partyOnMacro = new MacroCommand(partyOn);
+        MacroCommand partyOffMacro = new MacroCommand(partyOff);
+        //  Затем макрокоманда, как обычно, связывается с кнопкой:
+        remoteControl.setCommand(0, partyOnMacro, partyOffMacro);
 
-    
+        //дальше нажимаем кнопки и смотрим, как работает макрокоманда.
+        System.out.println(remoteControl);
+        System.out.println("--- Pushing Macro On--");
+        remoteControl.onButtonWasPushed(0);
+        System.out.println("--- Pushing Macro Off--");
+        remoteControl.offButtonWasPushed(0);
+
     }
 }

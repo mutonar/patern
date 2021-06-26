@@ -8,22 +8,21 @@ package Command;
 /**
  *
  * @author ad
- * Реализация комманды светаы
  */
-public class LightOffCommand implements Command {
-    Light light;
+class StereoOffCommand implements Command {
+    Stereo stereo;
  
-    public LightOffCommand(Light light) {
-        this.light = light;
+    public StereoOffCommand(Stereo stereo) {
+        this.stereo = stereo;
     }
  
     @Override
     public void execute() {
-        light.off();
+        stereo.off();
     }
 
     @Override
     public void undo() {
-        light.on();
+        stereo.on();
     }
 }

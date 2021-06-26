@@ -9,18 +9,27 @@ package Command;
  *
  * @author ad
  */
-class Stereo {
+class Stereo extends Equipment{
 
+    private int volume = 0;
+    
+    Stereo(String nameEquipment) {
+        discription = nameEquipment;
+    }
+    
     void on() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Stereo ON " + discription);
+    }
+    void off() {
+        System.out.println("Stereo OFF " + discription);
     }
 
     void setCD() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Stereo setCD " + discription);
     }
 
     void setVolume(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        volume = i;
+        System.out.println("Stereo volume " + discription);
     }
-    
 }

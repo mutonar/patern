@@ -8,22 +8,21 @@ package Command;
 /**
  *
  * @author ad
- * Реализация комманды светаы
  */
-public class LightOffCommand implements Command {
-    Light light;
+class HottubOnCommand implements Command {
+    Hottub hottub;
  
-    public LightOffCommand(Light light) {
-        this.light = light;
+    public HottubOnCommand(Hottub hottub) {
+        this.hottub = hottub;
     }
  
     @Override
     public void execute() {
-        light.off();
+        hottub.on();
     }
 
     @Override
     public void undo() {
-        light.on();
+        hottub.off();
     }
 }
