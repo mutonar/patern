@@ -12,18 +12,24 @@ package Singleton;
  * 
  * два потока одновременно могут все же создать два экземпляра
  * synchronized синхронизирует несколько потоков но по ресурсам очень трудозатратно
+ * по этому синхронизация только в блоке проверки
+ * volatile ниже версии 1.5 не верно работает использовать нужно другую синхронизацию
  * 
  */
-public class Singleton_learn {
+public class Singleton_learn2 {
     private static  String inFile = "this start \n";
-    private static Singleton_learn instance;
-    private Singleton_learn(){
+    private static volatile Singleton_learn2 instance; //  volatile - гарантированная работа с переменной при синхронизации потоков
+    private Singleton_learn2(){
         System.out.println("One constraction");
     }
     
-    public static synchronized Singleton_learn getInstance(){ // #3 
+    public static synchronized Singleton_learn2 getInstance(){ // #3 
       if(instance == null){                     //если объект еще не создан
-        instance = new Singleton_learn();	//создать новый объект
+          synchronized (Singleton_learn2.class){
+          if(instance == null){
+            instance = new Singleton_learn2();	//создать новый объект
+          }
+        }
       }
       return instance;                          // вернуть ранее созданный объект
     }

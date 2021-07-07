@@ -10,10 +10,9 @@ package FactoryAbstract;
  *
  * @author nazarov
  */
+class ChicagoPizzaIngredientFactory implements PizzaIngredientFactory {
 
-public class ChicagoPizzaIngredientFactory implements PizzaIngredientFactory {
- 
-    // Для каждого ингридиента создается своя версия
+    // Для каждого ингридиента создается своя версия(Отличие от ньюЁрской малюсками)
     public Dough createDough() {
         return new ThinCrustDough();
     }
@@ -32,9 +31,9 @@ public class ChicagoPizzaIngredientFactory implements PizzaIngredientFactory {
     }
  
     public Pepperoni createPepperoni() {
-        return new WholePepperoni();
+        return new SlicedPepperoni();
     }
     public Clams createClam() {
-        return new FreezeClams(); // Разные молюски в реализации Свежие мороженные
+        return new FreezeClams(); // Разные молюски в реализации мороженные
     }
 }

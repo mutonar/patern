@@ -11,20 +11,17 @@ package Singleton;
  * @author nazarov
  * 
  * два потока одновременно могут все же создать два экземпляра
- * synchronized синхронизирует несколько потоков но по ресурсам очень трудозатратно
+ * // можно при инициирование создавать и передавать только готовый
  * 
  */
-public class Singleton_learn {
+public class Singleton_learn1 {
     private static  String inFile = "this start \n";
-    private static Singleton_learn instance;
-    private Singleton_learn(){
+    private static Singleton_learn1 instance = instance = new Singleton_learn1(); 
+    private Singleton_learn1(){
         System.out.println("One constraction");
     }
     
-    public static synchronized Singleton_learn getInstance(){ // #3 
-      if(instance == null){                     //если объект еще не создан
-        instance = new Singleton_learn();	//создать новый объект
-      }
+    public static Singleton_learn1 getInstance(){ // #3 
       return instance;                          // вернуть ранее созданный объект
     }
     

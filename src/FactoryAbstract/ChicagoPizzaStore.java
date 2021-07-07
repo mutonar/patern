@@ -16,7 +16,7 @@ class ChicagoPizzaStore extends PizzaStore {
     protected Pizza createPizza(String item) {
         Pizza pizza = null;
         PizzaIngredientFactory ingredientFactory = 
-            new ChicagoIngredientFactory(); // выбранная фабрика для всех пицц
+            new ChicagoPizzaIngredientFactory(); // выбранная фабрика для всех пицц
  
         if (item.equals("cheese")) {
   
