@@ -9,7 +9,7 @@ package Command;
  *
  * @author ad
  */
-public class LightOnCommand implements Command {
+public class LightOnCommand implements CommandWithUndo {
     Light light;
  
     public LightOnCommand(Light light) {

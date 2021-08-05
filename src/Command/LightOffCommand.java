@@ -10,7 +10,7 @@ package Command;
  * @author ad
  * Реализация комманды светаы
  */
-public class LightOffCommand implements Command {
+public class LightOffCommand implements CommandWithUndo {
     Light light;
  
     public LightOffCommand(Light light) {

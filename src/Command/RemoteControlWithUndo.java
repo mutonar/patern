@@ -9,19 +9,19 @@ package Command;
  *
  * @author ad
  * 
- * реализация управления 
+ * реализация управления с функцией отмены
  */
 public class RemoteControlWithUndo {
-    Command[] onCommands;
-    Command[] offCommands;
-    Command undoCommand; // добавим новое поле для запоминания предыдущего значения комманды
+    CommandWithUndo[] onCommands;
+    CommandWithUndo[] offCommands;
+    CommandWithUndo undoCommand; // добавим новое поле для запоминания предыдущего значения комманды
 
  
     public RemoteControlWithUndo() {
-        onCommands = new Command[7];
-        offCommands = new Command[7];
+        onCommands = new CommandWithUndo[7];
+        offCommands = new CommandWithUndo[7];
  
-        Command noCommand = new NoCommand(); // Заполняет все ячейки командные по умолчанию пустым действием
+        CommandWithUndo noCommand = new NoCommand(); // Заполняет все ячейки командные по умолчанию пустым действием
         for (int i = 0; i < 7; i++) {
             onCommands[i] = noCommand;
             offCommands[i] = noCommand;
@@ -29,7 +29,7 @@ public class RemoteControlWithUndo {
         undoCommand = noCommand; // по умолчанию заносим пустую комманду
     }
   
-    public void setCommand(int slot, Command onCommand, Command offCommand) {
+    public void setCommand(int slot, CommandWithUndo onCommand, CommandWithUndo offCommand) {
         onCommands[slot] = onCommand;
         offCommands[slot] = offCommand;
     }

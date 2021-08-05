@@ -12,10 +12,10 @@ package Command;
  * Несколько комманд в одной
  * 
  */
-public class MacroCommand implements Command {
-    Command[] commands;
+public class MacroCommand implements CommandWithUndo {
+    CommandWithUndo[] commands;
  
-    public MacroCommand(Command[] commands) {
+    public MacroCommand(CommandWithUndo[] commands) {
         this.commands = commands;
     }
  

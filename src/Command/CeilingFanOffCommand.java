@@ -9,7 +9,7 @@ package Command;
  *
  * @author ad
  */
-class CeilingFanOffCommand implements Command {
+class CeilingFanOffCommand implements CommandWithUndo {
      CeilingFan ceilingFan;
     int prevSpeed;// предыдущая скорость вентилятора
   

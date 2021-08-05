@@ -12,7 +12,7 @@ package Command;
  *Управление команды вентилятором
  * 
  */
-public class CeilingFanHighCommand implements Command {
+public class CeilingFanHighCommand implements CommandWithUndo {
     CeilingFan ceilingFan;
     int prevSpeed;// предыдущая скорость вентилятора
   

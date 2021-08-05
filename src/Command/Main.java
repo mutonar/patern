@@ -13,6 +13,7 @@ package Command;
  * 
  * Реализация патерна Комманда
  *  инкапсулирует объекты между друг другом
+ * тут есть комманды с отменой
  * 
  */
 public class Main {
@@ -32,7 +33,7 @@ public class Main {
         remoteControl.onButtonWasPushed(0);
         remoteControl.offButtonWasPushed(0);
         System.out.println(remoteControl);
-        remoteControl.undoButtonWasPushed();
+        remoteControl.undoButtonWasPushed();// отмена команды
         remoteControl.offButtonWasPushed(0);
         remoteControl.onButtonWasPushed(0);
         System.out.println(remoteControl);
@@ -43,6 +44,9 @@ public class Main {
         
         // Тест макрокоманд
         useMacrocommands();
+        
+        // Тест лямбды вместо готовых классов
+        useLambdaCommand();
     }
     
     public static void runCelling(){
@@ -91,8 +95,8 @@ public class Main {
         HottubOnCommand hottubOn = new HottubOnCommand(hottub);
         HottubOffCommand hottubOff = new HottubOffCommand(hottub);
         // (включение и выключение), заполняются соответствующими командами:
-        Command[] partyOn = { lightOn, stereoOn, tvOn, hottubOn};
-        Command[] partyOff = { lightOff, stereoOff, tvOff, hottubOff};
+        CommandWithUndo[] partyOn = { lightOn, stereoOn, tvOn, hottubOn};
+        CommandWithUndo[] partyOff = { lightOff, stereoOff, tvOff, hottubOff};
         // и два объекта макрокоманд, в которых они хранятся.
         MacroCommand partyOnMacro = new MacroCommand(partyOn);
         MacroCommand partyOffMacro = new MacroCommand(partyOff);
@@ -105,6 +109,28 @@ public class Main {
         remoteControl.onButtonWasPushed(0);
         System.out.println("--- Pushing Macro Off--");
         remoteControl.offButtonWasPushed(0);
-
+    }
+    
+     // --- Использование лямбда функции вместо кеализации конкретных комманд ---
+    public static void useLambdaCommand(){
+        Light light = new Light("Living Room");
+        Stereo stereo = new Stereo("Living Room");
+        LightOnCommand lightOn = new LightOnCommand(light); //(вместо этого)
+        
+        Command stereoOnWithCD = () -> { // лябда в несколько действий
+            stereo.on(); stereo.setCD(); stereo.setVolume(11);
+        };
+        
+        RemoteControl remoteControl = new RemoteControl(); // тут просто реализация без отмены
+        remoteControl.setCommand(0, () -> {light.on();}, () -> {light.on();});
+        remoteControl.setCommand(1, stereo::on, stereo::off); // без лямб просто ссылкой на метод
+        remoteControl.setCommand(2, stereoOnWithCD, stereo::off); // тут лябда с большим количеством действий
+        
+        //дальше нажимаем кнопки и смотрим, как работает макрокоманда.
+        System.out.println(remoteControl);
+        System.out.println("--- Pushing Liambda On--");
+        remoteControl.onButtonWasPushed(0);
+        System.out.println("--- Pushing Liambda Off--");
+        remoteControl.offButtonWasPushed(0);
     }
 }

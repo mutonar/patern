@@ -9,7 +9,7 @@ package Command;
  *
  * @author ad
  */
-class TVOffCommand implements Command {
+class TVOffCommand implements CommandWithUndo {
     TV tv;
  
     public TVOffCommand(TV tv) {

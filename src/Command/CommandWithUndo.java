@@ -8,8 +8,10 @@ package Command;
 /**
  *
  * @author ad
- * Интерфейс комманда
+ * Интерфейс комманда то метод, исполнения и отмены
  */
-interface Command {
+interface CommandWithUndo {
     public void execute();
+    public void undo();
+
 }

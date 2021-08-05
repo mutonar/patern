@@ -9,7 +9,7 @@ package Command;
  *
  * @author ad
  */
-class HottubOnCommand implements Command {
+class HottubOnCommand implements CommandWithUndo {
     Hottub hottub;
  
     public HottubOnCommand(Hottub hottub) {

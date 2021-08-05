@@ -8,8 +8,12 @@ package Command;
 /**
  *
  * @author ad
- * Интерфейс комманда
+ * 
+ * Класс который не делает нечего без отмены
  */
-interface Command {
-    public void execute();
+public class NoCommandWhithoutUndo implements Command {
+    
+    @Override
+    public void execute() { }
+
 }

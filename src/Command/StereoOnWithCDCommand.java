@@ -9,7 +9,7 @@ package Command;
  *
  * @author ad
  */
-public class StereoOnWithCDCommand implements Command {
+public class StereoOnWithCDCommand implements CommandWithUndo {
     Stereo stereo;
  
     public StereoOnWithCDCommand(Stereo stereo) {
