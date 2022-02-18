@@ -3,13 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/tmp/NetBeansProjects/Patern/src/PatterIterator/Menu.java</file>
-            <file>file:/E:/tmp/NetBeansProjects/Patern/src/PatterIterator/Waitress.java</file>
-            <file>file:/E:/tmp/NetBeansProjects/Patern/src/PatterIterator/PancakeHouseMenu.java</file>
-            <file>file:/E:/tmp/NetBeansProjects/Patern/src/PatterIterator/DinerMenu.java</file>
+            <file>file:/E:/tmp/NetBeansProjects/Patern/src/Linker/MenuComponent.java</file>
             <file>file:/E:/tmp/NetBeansProjects/Patern/src/PatterIterator/Main.java</file>
-            <file>file:/E:/tmp/NetBeansProjects/Patern/src/PatterIterator/MenuItem.java</file>
-            <file>file:/E:/tmp/NetBeansProjects/Patern/src/PatterIterator/DinerMenuIterator.java</file>
+            <file>file:/E:/tmp/NetBeansProjects/Patern/src/Linker/Main.java</file>
         </group>
     </open-files>
 </project-private>
