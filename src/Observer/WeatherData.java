@@ -40,7 +40,7 @@ public class WeatherData implements Subject {
     @Override
     public void notifyObserver() {
        for(Observer o: observers){ // Рассылаем слушетелям 
-       o.updateDate(minTemperature, maxTemperature, valueTemperature);
+        o.updateDate(minTemperature, maxTemperature, valueTemperature);
        }
     }
     

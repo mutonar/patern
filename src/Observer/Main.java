@@ -18,7 +18,7 @@ public class Main {
 
         WeatherData weatherData = new WeatherData();
         Dysplay1 d0 = new Dysplay1(weatherData); // передаем за кем наблюдать
-        Dysplay1 d1 = new Dysplay1(); // передаем за кем наблюдать
+        Dysplay1 d1 = new Dysplay1(); 
         weatherData.addObserver(d1); // передаем наблюдателя
         Dysplay2 d2 = new Dysplay2(weatherData);
         

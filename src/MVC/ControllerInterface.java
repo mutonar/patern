@@ -4,14 +4,16 @@
  * and open the template in the editor.
  */
 
-package Observer;
+package MVC;
 
 /**
  *
- * @author Nazarov
+ * @author nazarov
  */
-
-// --- интервейс наблюдатель ---
-public interface Observer{
-    void updateDate(int min, int max, int value);
+public interface ControllerInterface {
+    void start();
+    void stop();
+    void increaseBPM();
+    void decreaseBPM();
+    void setBPM(int bpm);
 }
