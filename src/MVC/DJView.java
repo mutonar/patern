@@ -58,9 +58,9 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver {
     public void updateBPM() {
         int bpm = model.getBPM();
         if (bpm == 0) {
-            bpmOutputLabel.setText(“offline”);
+            bpmOutputLabel.setText("offline");
         } else {
-            bpmOutputLabel.setText(“Current BPM: “ + model.getBPM());
+            bpmOutputLabel.setText("Current BPM: " + model.getBPM());
         }
     }
   
