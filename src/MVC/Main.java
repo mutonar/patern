@@ -13,7 +13,8 @@ package MVC;
  */
 public class Main {
     public static void main (String[] args) {
-        BeatModelInterface model = new BeatModel();
-        ControllerInterface controller = new BeatController(model);
+        //BeatModelInterface model = new BeatModel();
+        //ControllerInterface controller = new BeatController(model);
+        DJViewServlet _DJViewServlet = new DJViewServlet();
     }
 }

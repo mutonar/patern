@@ -11,5 +11,7 @@ package MVC;
  * @author nazarov
  */
 interface BPMObserver {
+
+    public void updateBPM();
     
 }

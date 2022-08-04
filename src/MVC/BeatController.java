@@ -9,6 +9,8 @@ package MVC;
 /**
  *
  * @author nazarov
+ * 
+ *  просто управление передает модели данные
  */
 public class BeatController implements ControllerInterface {
     BeatModelInterface model;
@@ -16,6 +18,7 @@ public class BeatController implements ControllerInterface {
    
     public BeatController(BeatModelInterface model) {
         this.model = model;
+        
         view = new DJView(this, model);
         view.createView();
         view.createControls();
@@ -43,7 +46,7 @@ public class BeatController implements ControllerInterface {
     
     public void decreaseBPM() {
         int bpm = model.getBPM();
-        model.setBPM(bpm + 1);
+        model.setBPM(bpm - 1);
     }
   
     public void setBPM(int bpm) {

@@ -24,8 +24,10 @@ public interface BeatModelInterface {
     void registerObserver(BeatObserver o);
   
     void removeObserver(BeatObserver o);
-  
+    
+    // какое то гониво с двумя типами наблюдптелей
     void registerObserver(BPMObserver o);
   
     void removeObserver(BPMObserver o);
+
 }
